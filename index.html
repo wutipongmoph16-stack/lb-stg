@@ -28,6 +28,25 @@
         opacity: 1;
       }
     </style>
+
+    <style>
+      /* CSS เพิ่มเติมสำหรับการพลิก 3 มิติ */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      .group:hover .group-hover\:rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+    </style>
   </head>
   <body class="bg-slate-50 text-slate-800">
     <nav class="bg-white shadow-md fixed w-full z-50 top-0">
@@ -243,114 +262,277 @@
       </div>
     </section>
 
-    <section id="team" class="py-24 bg-teal-50">
+    <section id="team" class="py-24 bg-slate-900 text-white overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-20">
-          <h2 class="text-4xl font-extrabold text-teal-800">บุคลากรกลุ่มงาน</h2>
-          <div class="h-1.5 w-24 bg-amber-400 mx-auto mt-4 rounded"></div>
-          <p class="mt-6 text-xl text-slate-700 font-medium">
-            ทีมงานคุณภาพที่พร้อมขับเคลื่อนระบบสาธารณสุขจังหวัดลพบุรี
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-extrabold text-white">ทีมงานของเรา</h2>
+          <div class="h-1.5 w-24 bg-teal-500 mx-auto mt-4 rounded"></div>
+          <p class="mt-4 text-slate-400 font-medium">
+            รวมพลังขับเคลื่อนระบบสาธารณสุขจังหวัดลพบุรี
           </p>
         </div>
 
-        <div class="flex justify-center mb-24">
+        <div class="mb-20 flex justify-center" id="leader-team">
           <div
-            class="w-full max-w-lg text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl rounded-3xl p-10 bg-white shadow-xl border-t-8 border-teal-600"
+            class="group relative w-full max-w-4xl h-[450px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl cursor-pointer border-b-8 border-teal-500 mx-auto"
           >
+            <img
+              src="https://picsum.photos/1200/800?random=50"
+              alt="หัวหน้ากลุ่มงาน"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+            />
+
             <div
-              class="relative mx-auto w-64 h-64 mb-10 overflow-hidden rounded-full scale-on-scroll shadow-2xl"
-            >
-              <img
-                src="https://picsum.photos/400/400?random=10"
-                alt="หัวหน้ากลุ่มงาน"
-                class="w-full h-full object-cover"
-              />
+              class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent transition-opacity duration-700"
+            ></div>
+
+            <div class="absolute inset-0 flex flex-col justify-end">
+              <div
+                class="p-8 md:p-12 transform transition-transform duration-700 group-hover:-translate-y-24 md:group-hover:-translate-y-28"
+              >
+                <div
+                  class="inline-block bg-teal-500 text-white text-sm font-bold px-4 py-1.5 rounded-full mb-4 shadow-lg"
+                >
+                  ผู้นำทีม (Team Leader)
+                </div>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-2">
+                  น.ส.สมใจ ดีใจมาก
+                </h3>
+                <p class="text-teal-300 font-semibold text-xl md:text-2xl">
+                  หัวหน้ากลุ่มงานพัฒนายุทธศาสตร์สาธารณสุข
+                </p>
+              </div>
+
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 md:p-10 bg-white/10 backdrop-blur-md border-t border-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-700 opacity-0 group-hover:opacity-100 flex flex-col md:flex-row md:items-center justify-between"
+              >
+                <div class="border-l-4 border-teal-400 pl-4 mb-4 md:mb-0">
+                  <p
+                    class="text-white italic text-lg md:text-xl font-light drop-shadow-md"
+                  >
+                    "ข้อมูลถูกต้อง สื่อสารฉับไว ใส่ใจคุณภาพชีวิต
+                    เพื่อประชาชนชาวลพบุรี"
+                  </p>
+                </div>
+                <div class="flex-shrink-0">
+                  <span
+                    class="inline-flex items-center px-4 py-2 rounded-full bg-teal-600 text-white text-sm font-semibold hover:bg-teal-500 transition"
+                  >
+                    ✉️ ติดต่อผู้นำทีม
+                  </span>
+                </div>
+              </div>
             </div>
-            <h3 class="text-3xl font-extrabold text-slate-900 mb-2">
-              นางสาวสมใจ ดีใจมาก
-            </h3>
-            <p class="text-xl text-teal-700 font-semibold mb-3">
-              หัวหน้ากลุ่มงานพัฒนายุทธศาสตร์สาธารณสุข
-            </p>
-            <p class="text-lg text-slate-600">นักวิชาการสาธารณสุขเชี่ยวชาญ</p>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="mb-16">
+          <h4 class="text-2xl font-bold text-sky-400 mb-6 flex items-center">
+            <span class="bg-sky-900/50 p-2 rounded-lg mr-3 text-2xl">📊</span>
+            ทีมงานยุทธศาสตร์
+          </h4>
           <div
-            class="bg-white rounded-3xl p-10 shadow-lg border border-teal-100 transform transition hover:shadow-2xl hover:border-teal-200"
+            class="group flex flex-col md:flex-row w-full h-[600px] md:h-[400px] gap-3"
           >
-            <h4
-              class="text-2xl font-extrabold text-teal-800 mb-10 flex items-center border-b-2 border-teal-200 pb-4"
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-sky-500"
             >
-              <span class="bg-teal-100 p-3 rounded-2xl mr-4 text-3xl">📊</span>
-              งานยุทธศาสตร์
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+              <img
+                src="https://picsum.photos/600/800?random=51"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
               <div
-                class="text-center flex flex-col items-center p-6 bg-slate-50 rounded-3xl transform transition duration-300 hover:-translate-y-2 hover:bg-slate-100"
+                class="absolute inset-0 bg-gradient-to-t from-sky-900/90 via-sky-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
               >
-                <img
-                  src="https://picsum.photos/200/200?random=11"
-                  alt="บุคลากร"
-                  class="scale-on-scroll w-40 h-40 rounded-full object-cover mb-6 shadow-xl"
-                />
-                <h5 class="text-xl font-bold text-slate-800 mb-1">
-                  ชื่อ-นามสกุล
-                </h5>
-                <p class="text-sm text-slate-600">นักวิเคราะห์นโยบายและแผน</p>
+                <h3
+                  class="text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  นายข้อมูล แม่นยำ
+                </h3>
+                <p class="text-sky-300 font-medium whitespace-nowrap">
+                  นักวิเคราะห์นโยบายฯ
+                </p>
               </div>
+            </div>
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-sky-500"
+            >
+              <img
+                src="https://picsum.photos/600/800?random=52"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
               <div
-                class="text-center flex flex-col items-center p-6 bg-slate-50 rounded-3xl transform transition duration-300 hover:-translate-y-2 hover:bg-slate-100"
+                class="absolute inset-0 bg-gradient-to-t from-sky-900/90 via-sky-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
               >
-                <img
-                  src="https://picsum.photos/200/200?random=12"
-                  alt="บุคลากร"
-                  class="scale-on-scroll w-40 h-40 rounded-full object-cover mb-6 shadow-xl"
-                />
-                <h5 class="text-xl font-bold text-slate-800 mb-1">
-                  ชื่อ-นามสกุล
-                </h5>
-                <p class="text-sm text-slate-600">นักวิชาการคอมพิวเตอร์</p>
+                <h3
+                  class="text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  น.ส.วางแผน ดีเลิศ
+                </h3>
+                <p class="text-sky-300 font-medium whitespace-nowrap">
+                  นักวิเคราะห์นโยบายฯ
+                </p>
+              </div>
+            </div>
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-sky-500"
+            >
+              <img
+                src="https://picsum.photos/600/800?random=53"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-sky-900/90 via-sky-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
+              >
+                <h3
+                  class="text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  นายตัวชี้วัด ชัดเจน
+                </h3>
+                <p class="text-sky-300 font-medium whitespace-nowrap">
+                  นักวิชาการสาธารณสุข
+                </p>
+              </div>
+            </div>
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-sky-500"
+            >
+              <img
+                src="https://picsum.photos/600/800?random=54"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-sky-900/90 via-sky-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
+              >
+                <h3
+                  class="text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  น.ส.ระบบ ลื่นไหล
+                </h3>
+                <p class="text-sky-300 font-medium whitespace-nowrap">
+                  นักวิชาการคอมพิวเตอร์
+                </p>
               </div>
             </div>
           </div>
+        </div>
 
+        <div>
+          <h4 class="text-2xl font-bold text-amber-400 mb-6 flex items-center">
+            <span class="bg-amber-900/50 p-2 rounded-lg mr-3 text-2xl">🎙️</span>
+            ทีมงานสื่อสารประชาสัมพันธ์ฯ
+          </h4>
           <div
-            class="bg-white rounded-3xl p-10 shadow-lg border border-amber-100 transform transition hover:shadow-2xl hover:border-amber-200"
+            class="group flex flex-col md:flex-row w-full h-[700px] md:h-[400px] gap-3"
           >
-            <h4
-              class="text-2xl font-extrabold text-amber-700 mb-10 flex items-center border-b-2 border-amber-200 pb-4"
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-amber-500"
             >
-              <span class="bg-amber-100 p-3 rounded-2xl mr-4 text-3xl">🎙️</span>
-              งานสื่อสารประชาสัมพันธ์ฯ
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+              <img
+                src="https://picsum.photos/600/800?random=55"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
               <div
-                class="text-center flex flex-col items-center p-6 bg-slate-50 rounded-3xl transform transition duration-300 hover:-translate-y-2 hover:bg-slate-100"
+                class="absolute inset-0 bg-gradient-to-t from-amber-900/90 via-amber-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
               >
-                <img
-                  src="https://picsum.photos/200/200?random=13"
-                  alt="บุคลากร"
-                  class="scale-on-scroll w-40 h-40 rounded-full object-cover mb-6 shadow-xl"
-                />
-                <h5 class="text-xl font-bold text-slate-800 mb-1">
-                  ชื่อ-นามสกุล
-                </h5>
-                <p class="text-sm text-slate-600">นักประชาสัมพันธ์</p>
+                <h3
+                  class="text-xl md:text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  น.ส.เสียงใส ใจดี
+                </h3>
+                <p
+                  class="text-amber-300 text-sm md:text-base font-medium whitespace-nowrap"
+                >
+                  นักประชาสัมพันธ์
+                </p>
               </div>
+            </div>
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-amber-500"
+            >
+              <img
+                src="https://picsum.photos/600/800?random=56"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
               <div
-                class="text-center flex flex-col items-center p-6 bg-slate-50 rounded-3xl transform transition duration-300 hover:-translate-y-2 hover:bg-slate-100"
+                class="absolute inset-0 bg-gradient-to-t from-amber-900/90 via-amber-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
               >
-                <img
-                  src="https://picsum.photos/200/200?random=14"
-                  alt="บุคลากร"
-                  class="scale-on-scroll w-40 h-40 rounded-full object-cover mb-6 shadow-xl"
-                />
-                <h5 class="text-xl font-bold text-slate-800 mb-1">
-                  ชื่อ-นามสกุล
-                </h5>
-                <p class="text-sm text-slate-600">โสตทัศนศึกษา</p>
+                <h3
+                  class="text-xl md:text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  นายภาพสวย คมชัด
+                </h3>
+                <p
+                  class="text-amber-300 text-sm md:text-base font-medium whitespace-nowrap"
+                >
+                  โสตทัศนศึกษา
+                </p>
+              </div>
+            </div>
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-amber-500"
+            >
+              <img
+                src="https://picsum.photos/600/800?random=57"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-amber-900/90 via-amber-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
+              >
+                <h3
+                  class="text-xl md:text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  น.ส.บทความ โดนใจ
+                </h3>
+                <p
+                  class="text-amber-300 text-sm md:text-base font-medium whitespace-nowrap"
+                >
+                  นักวิชาการเผยแพร่
+                </p>
+              </div>
+            </div>
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-amber-500"
+            >
+              <img
+                src="https://picsum.photos/600/800?random=58"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-amber-900/90 via-amber-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
+              >
+                <h3
+                  class="text-xl md:text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  นายกราฟิก สร้างสรรค์
+                </h3>
+                <p
+                  class="text-amber-300 text-sm md:text-base font-medium whitespace-nowrap"
+                >
+                  นักออกแบบกราฟิก
+                </p>
+              </div>
+            </div>
+            <div
+              class="group/card relative flex-1 hover:flex-[2.5] transition-all duration-700 ease-in-out overflow-hidden rounded-2xl cursor-pointer shadow-lg group-hover:grayscale group-hover:opacity-40 hover:!grayscale-0 hover:!opacity-100 border border-slate-700 hover:border-amber-500"
+            >
+              <img
+                src="https://picsum.photos/600/800?random=59"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-amber-900/90 via-amber-900/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6"
+              >
+                <h3
+                  class="text-xl md:text-2xl font-bold text-white mb-1 whitespace-nowrap"
+                >
+                  น.ส.ออนไลน์ ทันยุค
+                </h3>
+                <p
+                  class="text-amber-300 text-sm md:text-base font-medium whitespace-nowrap"
+                >
+                  แอดมินโซเชียลมีเดีย
+                </p>
               </div>
             </div>
           </div>
