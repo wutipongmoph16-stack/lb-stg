@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>กลุ่มงานพัฒนายุทธศาสตร์สาธารณสุข - สสจ.ลพบุรี</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Noto Sans Thai", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* คลาสสำหรับแอนิเมชันเมื่อเลื่อนหน้าจอ */
+      .scale-on-scroll {
+        transform: scale(0.85);
+        opacity: 0;
+        transition:
+          transform 0.8s ease-out,
+          opacity 0.8s ease-out;
+      }
+      .scale-on-scroll.is-visible {
+        transform: scale(1);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-xl font-bold text-teal-600 hidden sm:block"
+              >ยุทธศาสตร์ฯ <span class="text-amber-500">สสจ.ลพบุรี</span></span
+            >
+            <span class="text-xl font-bold text-teal-600 sm:hidden"
+              >ยุทธศาสตร์ฯ</span
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-6">
+            <a
+              href="#about"
+              class="text-slate-600 hover:text-teal-600 font-medium transition"
+              >เกี่ยวกับเรา</a
+            >
+            <a
+              href="#departments"
+              class="text-slate-600 hover:text-teal-600 font-medium transition"
+              >หน่วยงาน</a
+            >
+            <a
+              href="#team"
+              class="text-slate-600 hover:text-teal-600 font-medium transition"
+              >บุคลากร</a
+            >
+            <a
+              href="#news"
+              class="text-slate-600 hover:text-teal-600 font-medium transition"
+              >ข่าวสาร</a
+            >
+            <a
+              href="#contact"
+              class="bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700 transition shadow-md"
+              >ติดต่อเรา</a
+            >
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-slate-600 hover:text-teal-600 focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-inner absolute w-full"
+      >
+        <a
+          href="#about"
+          class="block px-3 py-2 text-slate-600 hover:bg-teal-50 rounded-md"
+          >เกี่ยวกับเรา</a
+        >
+        <a
+          href="#departments"
+          class="block px-3 py-2 text-slate-600 hover:bg-teal-50 rounded-md"
+          >หน่วยงาน</a
+        >
+        <a
+          href="#team"
+          class="block px-3 py-2 text-slate-600 hover:bg-teal-50 rounded-md"
+          >บุคลากร</a
+        >
+        <a
+          href="#news"
+          class="block px-3 py-2 text-slate-600 hover:bg-teal-50 rounded-md"
+          >ข่าวสาร</a
+        >
+        <a href="#contact" class="block px-3 py-2 text-teal-600 font-bold"
+          >ติดต่อเรา</a
+        >
+      </div>
+    </nav>
+
+    <header
+      class="relative pt-16 bg-gradient-to-r from-teal-600 to-sky-500 overflow-hidden"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-[55%] text-white z-10 text-center md:text-left">
+          <p class="text-amber-300 font-semibold tracking-wider mb-2 text-lg">
+            สำนักงานสาธารณสุขจังหวัดลพบุรี
+          </p>
+          <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-4">
+            กลุ่มงานพัฒนา<br />ยุทธศาสตร์สาธารณสุข
+          </h1>
+          <p class="text-lg text-teal-50 mb-8 leading-relaxed">
+            ขับเคลื่อนนโยบาย กำหนดยุทธศาสตร์ และสื่อสารข้อมูลสุขภาพ
+            เพื่อคุณภาพชีวิตที่ดีของประชาชนชาวลพบุรี
+          </p>
+          <a
+            href="#about"
+            class="inline-block bg-white text-teal-700 px-8 py-3 rounded-full font-bold hover:bg-teal-50 shadow-lg transition duration-300 transform hover:-translate-y-1"
+            >รู้จักเราเพิ่มเติม</a
+          >
+        </div>
+        <div class="md:w-[45%] mt-12 md:mt-0 z-10 flex justify-center w-full">
+          <img
+            src="https://picsum.photos/600/400?random=1"
+            alt="ภาพหน้าแรก"
+            class="scale-on-scroll rounded-2xl shadow-2xl border-4 border-white object-cover w-full h-auto max-w-md"
+          />
+        </div>
+      </div>
+      <div class="absolute bottom-0 w-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 120"
+          class="w-full h-auto text-white fill-current"
+        >
+          <path
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+          ></path>
+        </svg>
+      </div>
+    </header>
+
+    <section id="about" class="py-16 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10"
+      >
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="https://picsum.photos/500/500?random=5"
+            alt="เกี่ยวกับเรา"
+            class="scale-on-scroll rounded-full w-2/3 md:w-3/4 mx-auto border-8 border-teal-50 shadow-xl"
+          />
+        </div>
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2 class="text-3xl font-bold text-teal-700 mb-4">
+            เกี่ยวกับกลุ่มงานฯ
+          </h2>
+          <div
+            class="h-1 w-20 bg-amber-400 mx-auto md:mx-0 mt-2 mb-6 rounded"
+          ></div>
+          <h3 class="text-xl text-slate-800 font-bold mb-4">
+            "ข้อมูลถูกต้อง สื่อสารฉับไว ใส่ใจคุณภาพชีวิต"
+          </h3>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            ภายใต้การกำกับดูแลของ
+            <strong>สำนักงานสาธารณสุขจังหวัดลพบุรี</strong>
+            เราเป็นกลไกสำคัญในการแปลงนโยบายระดับชาติสู่การปฏิบัติในระดับพื้นที่
+            เราเชื่อมโยงข้อมูล สร้างยุทธศาสตร์ที่ตอบโจทย์ปัญหาของพื้นที่
+            และใช้การสื่อสารเป็นเครื่องมือในการสร้างความเข้าใจและพฤติกรรมสุขภาพที่ดีให้กับพี่น้องประชาชนชาวจังหวัดลพบุรี
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="departments" class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-teal-700">หน่วยงานภายใน</h2>
+          <div class="h-1 w-20 bg-amber-400 mx-auto mt-3 rounded"></div>
+          <p class="mt-4 text-slate-600">
+            เราแบ่งการดำเนินงานออกเป็น 2 ส่วนหลัก เพื่อการทำงานที่มีประสิทธิภาพ
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white rounded-2xl p-8 shadow-md border-t-4 border-teal-500 hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center text-3xl mb-6"
+            >
+              📊
+            </div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-3">
+              1. งานยุทธศาสตร์
+            </h3>
+            <p class="text-slate-600 leading-relaxed">
+              รับผิดชอบด้านการวิเคราะห์ วางแผน
+              และจัดทำยุทธศาสตร์ด้านสาธารณสุขของจังหวัด ติดตามประเมินผลตัวชี้วัด
+              (KPIs) จัดการข้อมูลสารสนเทศด้านสุขภาพ
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl p-8 shadow-md border-t-4 border-amber-500 hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-6"
+            >
+              🎙️
+            </div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-3">
+              2. งานสื่อสารประชาสัมพันธ์ฯ
+            </h3>
+            <p class="text-slate-600 leading-relaxed">
+              ศูนย์กลางการสื่อสารความเสี่ยง สร้างความรอบรู้ด้านสุขภาพ (Health
+              Literacy) ผลิตสื่อโสตทัศนูปกรณ์ และดูแลระบบภาพและเสียงในการประชุม
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="py-24 bg-teal-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-extrabold text-teal-800">บุคลากรกลุ่มงาน</h2>
+          <div class="h-1.5 w-24 bg-amber-400 mx-auto mt-4 rounded"></div>
+          <p class="mt-6 text-xl text-slate-700 font-medium">
+            ทีมงานคุณภาพที่พร้อมขับเคลื่อนระบบสาธารณสุขจังหวัดลพบุรี
+          </p>
+        </div>
+
+        <div class="flex justify-center mb-24">
+          <div
+            class="w-full max-w-lg text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl rounded-3xl p-10 bg-white shadow-xl border-t-8 border-teal-600"
+          >
+            <div
+              class="relative mx-auto w-64 h-64 mb-10 overflow-hidden rounded-full scale-on-scroll shadow-2xl"
+            >
+              <img
+                src="https://picsum.photos/400/400?random=10"
+                alt="หัวหน้ากลุ่มงาน"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-3xl font-extrabold text-slate-900 mb-2">
+              นางสาวสมใจ ดีใจมาก
+            </h3>
+            <p class="text-xl text-teal-700 font-semibold mb-3">
+              หัวหน้ากลุ่มงานพัฒนายุทธศาสตร์สาธารณสุข
+            </p>
+            <p class="text-lg text-slate-600">นักวิชาการสาธารณสุขเชี่ยวชาญ</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div
+            class="bg-white rounded-3xl p-10 shadow-lg border border-teal-100 transform transition hover:shadow-2xl hover:border-teal-200"
+          >
+            <h4
+              class="text-2xl font-extrabold text-teal-800 mb-10 flex items-center border-b-2 border-teal-200 pb-4"
+            >
+              <span class="bg-teal-100 p-3 rounded-2xl mr-4 text-3xl">📊</span>
+              งานยุทธศาสตร์
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+              <div
+                class="text-center flex flex-col items-center p-6 bg-slate-50 rounded-3xl transform transition duration-300 hover:-translate-y-2 hover:bg-slate-100"
+              >
+                <img
+                  src="https://picsum.photos/200/200?random=11"
+                  alt="บุคลากร"
+                  class="scale-on-scroll w-40 h-40 rounded-full object-cover mb-6 shadow-xl"
+                />
+                <h5 class="text-xl font-bold text-slate-800 mb-1">
+                  ชื่อ-นามสกุล
+                </h5>
+                <p class="text-sm text-slate-600">นักวิเคราะห์นโยบายและแผน</p>
+              </div>
+              <div
+                class="text-center flex flex-col items-center p-6 bg-slate-50 rounded-3xl transform transition duration-300 hover:-translate-y-2 hover:bg-slate-100"
+              >
+                <img
+                  src="https://picsum.photos/200/200?random=12"
+                  alt="บุคลากร"
+                  class="scale-on-scroll w-40 h-40 rounded-full object-cover mb-6 shadow-xl"
+                />
+                <h5 class="text-xl font-bold text-slate-800 mb-1">
+                  ชื่อ-นามสกุล
+                </h5>
+                <p class="text-sm text-slate-600">นักวิชาการคอมพิวเตอร์</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl p-10 shadow-lg border border-amber-100 transform transition hover:shadow-2xl hover:border-amber-200"
+          >
+            <h4
+              class="text-2xl font-extrabold text-amber-700 mb-10 flex items-center border-b-2 border-amber-200 pb-4"
+            >
+              <span class="bg-amber-100 p-3 rounded-2xl mr-4 text-3xl">🎙️</span>
+              งานสื่อสารประชาสัมพันธ์ฯ
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+              <div
+                class="text-center flex flex-col items-center p-6 bg-slate-50 rounded-3xl transform transition duration-300 hover:-translate-y-2 hover:bg-slate-100"
+              >
+                <img
+                  src="https://picsum.photos/200/200?random=13"
+                  alt="บุคลากร"
+                  class="scale-on-scroll w-40 h-40 rounded-full object-cover mb-6 shadow-xl"
+                />
+                <h5 class="text-xl font-bold text-slate-800 mb-1">
+                  ชื่อ-นามสกุล
+                </h5>
+                <p class="text-sm text-slate-600">นักประชาสัมพันธ์</p>
+              </div>
+              <div
+                class="text-center flex flex-col items-center p-6 bg-slate-50 rounded-3xl transform transition duration-300 hover:-translate-y-2 hover:bg-slate-100"
+              >
+                <img
+                  src="https://picsum.photos/200/200?random=14"
+                  alt="บุคลากร"
+                  class="scale-on-scroll w-40 h-40 rounded-full object-cover mb-6 shadow-xl"
+                />
+                <h5 class="text-xl font-bold text-slate-800 mb-1">
+                  ชื่อ-นามสกุล
+                </h5>
+                <p class="text-sm text-slate-600">โสตทัศนศึกษา</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-teal-700">
+            ข่าวประชาสัมพันธ์ล่าสุด
+          </h2>
+          <div class="h-1 w-20 bg-amber-400 mx-auto mt-2 rounded"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+          >
+            <div class="overflow-hidden h-48">
+              <img
+                src="https://picsum.photos/400/250?random=2"
+                class="scale-on-scroll w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="text-xs font-semibold text-teal-600 uppercase tracking-wider"
+                >ยุทธศาสตร์</span
+              >
+              <h3 class="mt-2 text-xl font-bold text-slate-800 line-clamp-2">
+                ประชุมเชิงปฏิบัติการจัดทำแผนยุทธศาสตร์สุขภาพ ปี 2569
+              </h3>
+              <a
+                href="#"
+                class="mt-4 inline-block text-amber-500 font-semibold hover:text-amber-600"
+                >อ่านเพิ่มเติม &rarr;</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+          >
+            <div class="overflow-hidden h-48">
+              <img
+                src="https://picsum.photos/400/250?random=3"
+                class="scale-on-scroll w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="text-xs font-semibold text-amber-500 uppercase tracking-wider"
+                >ประชาสัมพันธ์</span
+              >
+              <h3 class="mt-2 text-xl font-bold text-slate-800 line-clamp-2">
+                ผลิตสื่อวิดีทัศน์รณรงค์ป้องกันโรคไข้เลือดออกในช่วงฤดูฝน
+              </h3>
+              <a
+                href="#"
+                class="mt-4 inline-block text-amber-500 font-semibold hover:text-amber-600"
+                >อ่านเพิ่มเติม &rarr;</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-slate-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+          >
+            <div class="overflow-hidden h-48">
+              <img
+                src="https://picsum.photos/400/250?random=4"
+                class="scale-on-scroll w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <span
+                class="text-xs font-semibold text-rose-500 uppercase tracking-wider"
+                >ประกาศ</span
+              >
+              <h3 class="mt-2 text-xl font-bold text-slate-800 line-clamp-2">
+                รายงานผลการดำเนินงานตามตัวชี้วัดกระทรวงสาธารณสุข ไตรมาสที่ 2
+              </h3>
+              <a
+                href="#"
+                class="mt-4 inline-block text-amber-500 font-semibold hover:text-amber-600"
+                >อ่านเพิ่มเติม &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="bg-teal-50 rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row border border-teal-100"
+        >
+          <div
+            class="md:w-1/2 p-10 bg-teal-600 text-white flex flex-col justify-center relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-teal-500 opacity-50"
+            ></div>
+            <h2 class="text-3xl font-bold mb-6 relative z-10">
+              ติดต่อหน่วยงาน
+            </h2>
+            <div class="space-y-5 relative z-10">
+              <p class="flex items-start">
+                <span class="mr-3 text-xl mt-1">📍</span>
+                <span
+                  >กลุ่มงานพัฒนายุทธศาสตร์สาธารณสุข<br />สำนักงานสาธารณสุขจังหวัดลพบุรี<br />อ.เมือง
+                  จ.ลพบุรี</span
+                >
+              </p>
+              <p class="flex items-center">
+                <span class="mr-3 text-xl">📞</span> 036-689-689 ต่อ 133
+              </p>
+            </div>
+          </div>
+          <div class="md:w-1/2 bg-slate-200 min-h-[350px]">
+            <iframe
+              src="https://maps.google.com/maps?q=สำนักงานสาธารณสุขจังหวัดลพบุรี&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+      <p>
+        &copy; 2569 กลุ่มงานพัฒนายุทธศาสตร์สาธารณสุข
+        สำนักงานสาธารณสุขจังหวัดลพบุรี
+      </p>
+    </footer>
+
+    <script>
+      // เมนูมือถือ
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+      // แอนิเมชันรูปภาพขยายเมื่อเลื่อนถึง
+      document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.15,
+        };
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        const animatedImages = document.querySelectorAll(".scale-on-scroll");
+        animatedImages.forEach((img) => imageObserver.observe(img));
+      });
+    </script>
+  </body>
+</html>
